@@ -30,11 +30,11 @@ RUN set -ex \
 		libgcc \
 		musl \
 		curl-dev ruby-dev build-base \
-	&& gem install rack --version "1.6.4" --no-ri --no-rdoc \
-	&& gem install eventmachine --version "1.0.9.1" --no-ri --no-rdoc \
-	&& gem install thin --version "1.6.4" --no-ri --no-rdoc \
-	&& gem install sinatra --version "1.4.7" --no-ri --no-rdoc \
-	&& gem install activesupport --version "4.2.5.2" --no-ri --no-rdoc \
+	&& gem install -N rack --version "1.6.4" -- --use-system-libraries \
+	&& gem install -N puma --version "3.2.0" -- --use-system-libraries \
+	&& gem install -N sinatra --version "1.4.7" -- --use-system-libraries \
+	&& gem install -N activesupport --version "4.2.5.2" -- --use-system-libraries \
+	&& gem install -N oj --version "2.15.0" -- --use-system-libraries \
 	&& apk del .gem-builddeps
 
 RUN apk add --update libstdc++ && rm -rf /var/cache/apk/*
