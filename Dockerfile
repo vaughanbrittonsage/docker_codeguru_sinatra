@@ -1,4 +1,4 @@
-FROM codeguru/ruby:2.3
+FROM codeguru/ruby:2.2_alpine
 
 RUN set -ex \
 	&& apk add --no-cache --virtual .gem-builddeps \
