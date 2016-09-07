@@ -34,6 +34,7 @@ RUN set -ex \
 	&& gem install -N puma --version "3.2.0" -- --use-system-libraries \
 	&& gem install -N sinatra --version "1.4.7" -- --use-system-libraries \
 	&& gem install -N json --version "1.8.3" -- --use-system-libraries \
+	&& gem install -N oj --version "2.15.0" -- --use-system-libraries \
 	&& apk del .gem-builddeps
 
 RUN apk add --update libstdc++ && rm -rf /var/cache/apk/*
